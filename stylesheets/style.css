@@ -1,0 +1,385 @@
+/*					FONTFACES					*/
+
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cinzel Regular'), local('Cinzel-Regular'), url(https://fonts.gstatic.com/s/cinzel/v7/i2BwM1Eq2JyiNOY_VrkubOvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v12/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+html, p {
+	font-family: 'Raleway', sans-serif;
+}
+
+
+h1 {
+	font-family: 'Cinzel-Regular', serif;
+}
+
+/*				GROUP SELECTORS 			*/
+
+header, header div, header nav ul, .jumbotron, .articles, .jumbotext,
+ .jumbobutton, .art, .courses, .container, .row, .course-art,
+ .exhibit, .exhibit-container, .exhibit-art, .footer, .footnav ul {
+	display: flex;
+}
+
+header, header nav ul li a, .jumbotron, .imgcontainer img,
+ .jumbobutton, .articles, .bigarticle, .bigarticle img, .smallarticles, 
+ .art, .art img, .courses, .course-art, .exhibit, .video-container video,
+ .exhibit-art, .exhibit-art img {
+	border-radius: 4px;
+}
+
+.jumbobutton, .art, .courses, .row, .exhibit, .exhibit-container,
+.exhibit-art {
+	justify-content: center;
+}
+
+header a div, .jumbotron, header, .art, .courses, .course-art,
+.exhibit, .exhibit-art {
+	align-items: center;
+}
+
+header a div, .jumbotron, header nav ul, .course-art {
+	justify-content: flex-start;
+}
+
+header, .jumbotext, .footer {
+	justify-content: space-between;
+}
+
+.jumbotron, .articles, .courses, .exhibit, .footer  {
+	top: 64px;
+	position: relative;
+	z-index: 1;
+}
+
+.jumbotext, .courses, .container, .course-art, .exhibit {
+	flex-direction: column;
+}
+
+/*				HEADER					*/
+
+header {
+	height: 64px;
+	position: fixed;
+	z-index: 9001;
+	width: 100%;
+	background-color: white;
+	border-bottom: solid 1px darkgrey;
+}
+
+header a {
+	text-decoration: none;
+	color: black;
+}
+
+header div h1:last-child {
+	color: grey;
+}
+
+header div h1 {
+	font-size: 18px;
+}
+
+header nav, header a div {
+	margin:0 24px 0 24px;
+}
+
+header nav ul li a {
+	color: black;
+	text-decoration: none;
+	margin: 0 8px 0 8px;
+	padding: 10px;
+}
+
+header nav ul li a:hover {
+	background-color: grey;
+	color: white;
+}
+
+/*				JUMBOTRON					*/
+
+.jumbotron {
+	background-color: lightgrey;
+	font-weight: bold;
+}
+
+.imgcontainer {
+	width: 60%;
+	margin: 32px 24px 32px 24px;
+}
+
+.imgcontainer img {
+	width: 100%;
+	height: auto;
+	
+}
+
+.jumbotext {
+	width: 320px;
+	height: 250px;
+}
+
+.jumbotext h1 {
+	font-size: 30px;
+}
+
+.jumbotext p {
+	font-size: 24px;
+}
+
+.jumbotext a {
+	text-decoration: none;
+	color: white;
+}
+
+.jumbobutton {
+	padding: 8px 0 8px 0;
+	width: 100%;
+	font-size: 18px;
+	background-color: grey;
+}
+
+.jumbobutton:hover {
+	color: black;
+	background-color: white;
+}
+
+/*					CONTENT 					*/
+/*					ARTICLES					*/
+
+.bigarticle {
+	width: 60%;
+	padding: 32px 24px;
+	border-right: solid 1px darkgrey;
+}
+
+.bigarticle img {
+	width: 100%;
+}
+
+.bigarticle h1 {
+	font-size: 32px;
+	font-weight: bold;
+	margin: 32px 0 24px 0;
+}
+
+.bigarticle p {
+	margin: 0 0 32px 0;
+	font-size: 20px;
+}
+
+.bigarticle p:last-child {
+	font-size: 15px;
+	margin: 0;
+}
+
+.smallarticles {
+	width: 40%;
+	padding: 32px 0;
+}
+
+.art {
+	padding: 16px;
+	margin: 1px 0;
+}
+
+.art:nth-child(2){
+	border-top: solid 1px darkgrey;
+}
+
+.art img {
+	width: 35%;
+	height: auto;
+	margin-right: 16px;
+}
+.art div {
+	width: 65%;
+}
+
+.art:last-child {
+	border-top: solid 1px darkgrey;
+	background-color: lightgrey;
+}
+
+.art:first-child {
+	border-bottom: solid 1px darkgrey;
+}
+
+.art div a {
+	text-decoration: none;
+	color: blue;
+}
+
+.art div a:hover {
+	color: firebrick;
+}
+
+.art div p {
+	margin: 8px 0;
+}
+
+.art div h1 {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+/*					COURSES					*/
+
+.courses {
+	background-color: lightgrey;
+	padding: 32px 72px;
+	max-width: 100%;
+	
+}
+.courses h1 {
+	margin:0 0 32px 0;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.container {
+	width: 100%;
+}
+
+.row {
+	width: 100%;
+
+}
+.row:last-child {
+	margin-top: 32px;
+}
+
+.course-art {
+	margin-right: 32px;
+	width: 25%;
+	height: 300px;
+
+	background-color: white;
+	border: solid 2px lightgrey;
+}
+
+.course-art:hover {
+	border: solid 2px black;
+}
+
+.course-art:last-child {
+	margin-right: 0;
+}
+
+.course-art img {
+	width: 100%;
+	height: auto;
+	border-radius: 4px 4px 0 0;
+	
+}
+.course-text {
+	padding: 16px;
+}
+.course-text p {
+	margin: 8px 0;
+}
+
+/*					EXHIBIT				*/
+
+.exhibit {
+	width: 100%;
+	padding-top: 32px;
+}
+
+.exhibit h1 {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.video-container {
+	width: 60%;
+	margin-right: 24px;
+}
+
+
+.video-container video {
+	width: 100%;
+	height: auto;
+}
+
+.video-container h1 {
+	font-size: 18px;
+	margin: 24px 0 8px 0;
+}
+
+.exhibit-container {
+	width: 100%;
+	margin: 32px 0 32px 24px;
+}
+
+.exhibit-articles {
+	width: 40%;
+}
+
+.exhibit-art {
+	padding:15px;
+}
+.exhibit-art:first-child {
+	background-color: lightgrey;
+}
+
+.exhibit-art img {
+	width: 35%;
+	height: auto;
+	margin-right: 16px;
+}
+.exhibit-art-text {
+	width: 65%;
+}
+
+.exhibit-art-text h1 {
+	font-size: 22px;
+}
+
+/*					FOOTER 					*/
+
+.footer {
+	padding: 16px 24px 40px 24px;
+	border-top: solid 1px lightgrey;
+}
+
+.footer, .footnav ul li a {
+	color: darkgrey;
+}
+
+.footnav ul {
+	justify-content: flex-end;
+}
+.footnav ul li {
+	margin-left: 10px;
+}
+.footnav ul li a {
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*div {
+	border: solid 1px;
+}*/
