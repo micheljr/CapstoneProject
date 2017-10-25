@@ -15,8 +15,9 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
-html, p {
+html {
 	font-family: 'Raleway', sans-serif;
+	line-height: 1.4;
 }
 
 
@@ -35,7 +36,7 @@ header, header div, header nav ul, .jumbotron, .articles, .jumbotext,
 header, header nav ul li a, .jumbotron, .imgcontainer img,
  .jumbobutton, .articles, .bigarticle, .bigarticle img, .smallarticles, 
  .art, .art img, .courses, .course-art, .exhibit, .video-container video,
- .exhibit-art, .exhibit-art img {
+ .exhibit-art, .exhibit-art img, .nav-mobile ul li  {
 	border-radius: 4px;
 }
 
@@ -107,11 +108,17 @@ header nav ul li a:hover {
 	color: white;
 }
 
+.nav-mobile {
+	display: none;
+}
+
+
 /*				JUMBOTRON					*/
 
 .jumbotron {
 	background-color: lightgrey;
 	font-weight: bold;
+	width: 100%;
 }
 
 .imgcontainer {
@@ -126,7 +133,7 @@ header nav ul li a:hover {
 }
 
 .jumbotext {
-	width: 320px;
+	width: 30%;
 	height: 250px;
 }
 
@@ -145,7 +152,6 @@ header nav ul li a:hover {
 
 .jumbobutton {
 	padding: 8px 0 8px 0;
-	width: 100%;
 	font-size: 18px;
 	background-color: grey;
 }
@@ -156,6 +162,7 @@ header nav ul li a:hover {
 }
 
 /*					CONTENT 					*/
+
 /*					ARTICLES					*/
 
 .bigarticle {
@@ -203,6 +210,9 @@ header nav ul li a:hover {
 	height: auto;
 	margin-right: 16px;
 }
+.img-mobile {
+	display: none;
+}
 .art div {
 	width: 65%;
 }
@@ -240,6 +250,7 @@ header nav ul li a:hover {
 	background-color: lightgrey;
 	padding: 32px 72px;
 	max-width: 100%;
+
 	
 }
 .courses h1 {
@@ -253,6 +264,7 @@ header nav ul li a:hover {
 }
 
 .row {
+	height: 300px;
 	width: 100%;
 
 }
@@ -263,7 +275,8 @@ header nav ul li a:hover {
 .course-art {
 	margin-right: 32px;
 	width: 25%;
-	height: 300px;
+	max-width: 300px;
+	height: 100%;
 
 	background-color: white;
 	border: solid 2px lightgrey;
@@ -284,10 +297,19 @@ header nav ul li a:hover {
 	
 }
 .course-text {
-	padding: 16px;
+	padding-top: 16px;
+	padding-left: 16px;
 }
 .course-text p {
 	margin: 8px 0;
+}
+
+#paddingart .course-text p {
+	margin-bottom: 0;
+}
+
+.container-ul {
+	display: none;
 }
 
 /*					EXHIBIT				*/
@@ -300,6 +322,10 @@ header nav ul li a:hover {
 .exhibit h1 {
 	font-size: 32px;
 	font-weight: bold;
+}
+
+.vid-cont-mobile {
+	display: none;
 }
 
 .video-container {
@@ -319,7 +345,7 @@ header nav ul li a:hover {
 }
 
 .exhibit-container {
-	width: 100%;
+	
 	margin: 32px 0 32px 24px;
 }
 
@@ -368,18 +394,163 @@ header nav ul li a:hover {
 	text-decoration: none;
 }
 
+/*					MEDIAQUERIES			*/
 
+@media only screen and (max-width: 550px){
+	.img-mobile {
+		display: block;
+	}
+	.smallarticles {
+		width: 100%;
+		padding: 0;
+	}
+	.jumbortron {
+		height: 700px;
+	}
+	.art {
+		flex-direction: column;
+		margin: 32px 16px;
+	}
+	.art:last-child {
+		background-color: white;
+		border-top: none;
+	}
+	.art:nth-child(2) {
+		border-top: none;
+	}
+	.art:first-child {
+		border-bottom: none;
+		margin-top: 16px;
+	}
+	.art img {
+		width: 100%;
+		height: auto;
+		margin: 0;
+	}
+	.art div {
+		width: 100%;
+		margin-left: 16px;
+		margin-top: 32px;
+	}
+	.container-ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	.courses {
+		padding: 32px 16px;
+		background-color: white;
+		border-top: solid 1px lightgrey;
+		border-bottom: solid 1px lightgrey;
+	}
+	.container-ul ul {
+		width: 100%;
+		vertical-align: middle;
+	}
+	.container-ul ul li {
+		margin: 0 16px;
+		margin-bottom: 8px;
+		background-color: lightgrey;
+		padding: 16px 0 24px 16px;
+	}
+	.container-ul ul li:hover {
+		background-color: grey;
+		color: white;
+	}
+	.container, .img-desktop, .bigarticle {
+		display: none;
+	}
+	
 
+	
+	
+}
 
+@media only screen and (max-width: 735px){
+	.nav-mobile {
+		display: flex;
+		background-color: white;
+		align-items: center;
+		width: 100%;
+		height: 64px;
+		position:fixed;
+		z-index: 9001;
+		border-bottom: solid 1px darkgrey;
+	}
+	.nav-mobile ul {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 50px 0 50px;
+	}
 
+	header {
+		display: none;
+	}
+	.courses {
+		padding: 32px 0;
+	}
 
+}
 
-
-
-
-
-
-
-/*div {
-	border: solid 1px;
-}*/
+@media only screen and (max-width: 850px){
+	.jumbotron {
+		width: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.jumbotext {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 32px 0;
+	}
+	.jumbotext p, .jumbotext h1 {
+		margin: 0 16px;
+	}
+	.jumbotext h1 {
+		margin-top: 32px;
+	}
+	.jumbotext .jumbobutton {
+		margin-bottom: 32px;
+	}
+	.imgcontainer {
+		width: 100%;
+		height: 70%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+	}
+	.imgcontainer img {
+		
+		max-width: 100%;
+		height: auto;
+	}
+	.jumbobutton {
+		padding: 8px 100px;
+	}
+	
+	.course-art {
+		width: 30%;
+	}
+	.exhibit-container {
+		display: none;
+	}
+	.vid-cont-mobile {
+		display: inline;
+		width: 100%;
+		margin-top: 32px;
+	}
+	.vid-cont-mobile video {
+		width: 100%;
+		margin-bottom: 24px;
+	}
+	.footer {
+		border-top: none;
+		padding: 16px 24px;
+	}
+}
